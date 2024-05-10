@@ -19,10 +19,10 @@ app.use((req, res, next) => {
 })
 
 app.use((err, req, res, next) => {
-code='shit'
+
   const body = {
     "message": "Sorry, the requested resource couldn't be found.",
-    "statusCode": `${code}`
+    "statusCode": 404
   }
   res.status(err.status || 500)
   res.send(body)
